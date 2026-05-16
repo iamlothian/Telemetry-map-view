@@ -7,3 +7,4 @@
 vitest.config.*.timestamp*
 __screenshots__/
 node_modules
+apps/backend-api/target/

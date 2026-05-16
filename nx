@@ -1,5 +1,20 @@
 #!/bin/bash
+
+# VS Code tasks may run non-login shells where nvm is not initialized.
+if ! command -v node >/dev/null 2>&1; then
+	if [ -s "$HOME/.nvm/nvm.sh" ]; then
+		# shellcheck disable=SC1090
+		. "$HOME/.nvm/nvm.sh" >/dev/null 2>&1
+	fi
+fi
+
+if ! command -v node >/dev/null 2>&1; then
+	latest_node_bin=$(ls -d "$HOME"/.nvm/versions/node/*/bin 2>/dev/null | tail -n 1)
+	if [ -n "$latest_node_bin" ]; then
+		export PATH="$latest_node_bin:$PATH"
+	fi
+fi
+
 command -v node >/dev/null 2>&1 || { echo >&2 "Nx requires NodeJS to be available. To install NodeJS and NPM, see: https://nodejs.org/en/download/ ."; exit 1; }
-command -v npm >/dev/null 2>&1 || { echo >&2 "Nx requires npm to be available. To install NodeJS and NPM, see: https://nodejs.org/en/download/ ."; exit 1; }
-path_to_root=$(dirname $BASH_SOURCE)
-node $path_to_root/.nx/nxw.js "$@"
+path_to_root=$(dirname "$BASH_SOURCE")
+node "$path_to_root/.nx/nxw.js" "$@"
