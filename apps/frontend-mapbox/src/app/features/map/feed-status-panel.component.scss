@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+.feed-panel {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  min-width: 180px;
+
+  h3 {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #aaa;
+  }
+}
+
+.feed-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+  font-size: 0.85rem;
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &.healthy .indicator { background: #4caf50; }
+  &.unhealthy .indicator { background: #f44336; }
+
+  .message {
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+}
+
+.empty {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}

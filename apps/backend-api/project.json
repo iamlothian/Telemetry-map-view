@@ -1,0 +1,37 @@
+{
+  "name": "backend-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/backend-api/src",
+  "tags": ["scope:backend", "type:app"],
+  "targets": {
+    "build": {
+      "command": "mvnw.cmd package -DskipTests",
+      "options": {
+        "cwd": "apps/backend-api"
+      },
+      "inputs": ["default"],
+      "outputs": ["{projectRoot}/target"]
+    },
+    "serve": {
+      "command": "mvnw.cmd spring-boot:run",
+      "options": {
+        "cwd": "apps/backend-api"
+      }
+    },
+    "test": {
+      "command": "mvnw.cmd test",
+      "options": {
+        "cwd": "apps/backend-api"
+      },
+      "inputs": ["default"],
+      "outputs": ["{projectRoot}/target/surefire-reports"]
+    },
+    "lint": {
+      "command": "mvnw.cmd checkstyle:check",
+      "options": {
+        "cwd": "apps/backend-api"
+      }
+    }
+  }
+}

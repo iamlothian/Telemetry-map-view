@@ -1,0 +1,23 @@
+.app-shell {
+  position: fixed;
+  inset: 0;
+  display: flex;
+
+  .map-area {
+    flex: 1;
+    position: relative;
+    height: 100%;
+  }
+
+  .overlay-panel {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    pointer-events: none;
+
+    > * {
+      pointer-events: all;
+    }
+  }
+}

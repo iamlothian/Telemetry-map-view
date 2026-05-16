@@ -1,0 +1,10 @@
+{
+  "name": "frontend-mapbox-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/frontend-mapbox-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["frontend-mapbox"],
+  "// targets": "to see all targets run: nx show project frontend-mapbox-e2e --web",
+  "targets": {}
+}

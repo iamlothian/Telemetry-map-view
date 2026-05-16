@@ -1,0 +1,9 @@
+.nx/installation
+.nx/cache
+.nx/workspace-data
+.nx/self-healing
+.angular
+
+vitest.config.*.timestamp*
+__screenshots__/
+node_modules

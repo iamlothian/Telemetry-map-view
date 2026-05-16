@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4fc3f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Train body -->
+  <rect x="4" y="3" width="16" height="13" rx="3" ry="3" fill="#1565c0" stroke="#4fc3f7"/>
+  <!-- Windows -->
+  <rect x="6" y="5.5" width="5" height="4" rx="1" fill="#90caf9"/>
+  <rect x="13" y="5.5" width="5" height="4" rx="1" fill="#90caf9"/>
+  <!-- Undercarriage -->
+  <line x1="6" y1="16" x2="6" y2="19" stroke="#4fc3f7"/>
+  <line x1="18" y1="16" x2="18" y2="19" stroke="#4fc3f7"/>
+  <line x1="3" y1="19" x2="21" y2="19" stroke="#4fc3f7" stroke-width="2"/>
+  <!-- Wheels -->
+  <circle cx="7" cy="20.5" r="1.5" fill="#1565c0" stroke="#4fc3f7"/>
+  <circle cx="12" cy="20.5" r="1.5" fill="#1565c0" stroke="#4fc3f7"/>
+  <circle cx="17" cy="20.5" r="1.5" fill="#1565c0" stroke="#4fc3f7"/>
+  <!-- Direction arrow -->
+  <path d="M10 1 L12 3 L14 1" fill="#4fc3f7"/>
+</svg>
