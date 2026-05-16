@@ -1,0 +1,14 @@
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/TelemetryApplication.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/config/SecurityConfig.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/controller/FeedStatusController.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/controller/TelemetryController.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/feed/AbstractGtfsRtFeedAdapter.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/feed/FeedAdapter.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/feed/adapters/AmtrakFeedAdapter.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/feed/adapters/MetrolinxFeedAdapter.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/feed/adapters/ViaRailFeedAdapter.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/model/FeedStatus.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/model/TelemetryEvent.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/model/TrainPosition.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/model/VehicleType.java
+/home/mlothian/projects/Telemetry-map-view/apps/backend-api/src/main/java/com/telemetry/service/TelemetryIngestionService.java

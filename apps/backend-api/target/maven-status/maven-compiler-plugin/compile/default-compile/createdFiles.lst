@@ -1,0 +1,17 @@
+com/telemetry/model/VehicleType.class
+com/telemetry/feed/FeedAdapter.class
+com/telemetry/model/FeedStatus.class
+com/telemetry/service/TelemetryIngestionService.class
+com/telemetry/controller/TelemetryController.class
+com/telemetry/feed/AbstractGtfsRtFeedAdapter.class
+com/telemetry/model/TrainPosition$TrainPositionBuilder.class
+com/telemetry/model/FeedStatus$FeedStatusBuilder.class
+com/telemetry/controller/FeedStatusController.class
+com/telemetry/model/TelemetryEvent.class
+com/telemetry/feed/adapters/ViaRailFeedAdapter.class
+com/telemetry/feed/adapters/MetrolinxFeedAdapter.class
+com/telemetry/model/TelemetryEvent$TelemetryEventBuilder.class
+com/telemetry/model/TrainPosition.class
+com/telemetry/TelemetryApplication.class
+com/telemetry/feed/adapters/AmtrakFeedAdapter.class
+com/telemetry/config/SecurityConfig.class
