@@ -7,7 +7,6 @@ import com.telemetry.model.VehicleType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -56,7 +55,7 @@ public abstract class AbstractGtfsRtFeedAdapter implements FeedAdapter {
                 });
     }
 
-    private Mono<Flux<TrainPosition>> fetchPositions() {
+    private Flux<TrainPosition> fetchPositions() {
         var req = webClient.get().uri(getFeedUrl());
         if (apiKey() != null) {
             req = req.header("Authorization", "Bearer " + apiKey());
@@ -64,18 +63,19 @@ public abstract class AbstractGtfsRtFeedAdapter implements FeedAdapter {
 
         return req.retrieve()
                 .bodyToMono(byte[].class)
-                .map(this::parseGtfsRt)
-                .doOnSuccess(positions -> {
+                .flatMapMany(bytes -> {
+                    Flux<TrainPosition> positions = parseGtfsRt(bytes);
                     lastSuccessMs.set(System.currentTimeMillis());
                     errorCount.set(0);
                     lastError.set(null);
-                    log.debug("[{}] Received {} positions", getFeedId(), positions.count());
+                    log.debug("[{}] Fetched positions", getFeedId());
+                    return positions;
                 })
                 .onErrorResume(err -> {
                     errorCount.incrementAndGet();
                     lastError.set(err.getMessage());
                     log.warn("[{}] Fetch failed: {}", getFeedId(), err.getMessage());
-                    return Mono.just(Flux.empty());
+                    return Flux.empty();
                 });
     }
 
