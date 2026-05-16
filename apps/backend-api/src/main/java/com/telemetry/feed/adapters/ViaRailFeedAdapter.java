@@ -1,7 +1,7 @@
 package com.telemetry.feed.adapters;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 import com.telemetry.feed.FeedAdapter;
 import com.telemetry.model.FeedStatus;
 import com.telemetry.model.TrainPosition;
@@ -80,7 +80,7 @@ public class ViaRailFeedAdapter implements FeedAdapter {
                         lastSuccessMs.set(receivedAt);
                         errorCount.set(0);
 
-                        return Flux.fromIterable(root::elements)
+                        return Flux.fromIterable(root)
                                 .filter(train -> train.has("lat") && train.has("lng"))
                                 .map(train -> mapToPosition(train, receivedAt));
                     } catch (Exception e) {

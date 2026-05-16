@@ -1,7 +1,6 @@
 package com.telemetry.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.telemetry.model.TelemetryEvent;
 import com.telemetry.service.TelemetryIngestionService;
 import lombok.RequiredArgsConstructor;
@@ -60,7 +59,7 @@ public class TelemetryController {
     private String serialize(Object payload) {
         try {
             return objectMapper.writeValueAsString(payload);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             log.error("Failed to serialize payload: {}", e.getMessage());
             return "{}";
         }
